@@ -1,4 +1,4 @@
-package Part1JavaSyntax.visibility_of_variables;
+package Part1JavaSyntax.visibilityOfVariables;
 
 
 public class Cat {
