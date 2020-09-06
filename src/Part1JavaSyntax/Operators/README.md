@@ -1,4 +1,3 @@
-
 # Numeric Operators
 ## Unary operators
 * Unary minus `-`: flips the number's sign.
@@ -40,3 +39,17 @@ All operations are performed from left to right, taking into account their prece
 | logical OR  | `||`  |
 | ternary  | `?` `:`  |
 | assignment  | `=` `+=` `-=` `*=` `/=` `%=` `&=` `^=` `|=` `<<=` `>>=` `>>>=`  |
+
+## Ternary Operator
+* **condition ? outcome 1 : outcome 2**
+![](Ternary.png)
+
+## Escaping Characters
+* `\t`: tab
+* `\b`: backspace (a step backward in the text or deletion of a single character).
+* `\n`: new line; line feed. (LF)
+* `\r`: carriage return; back to the begining of current line. (CR)
+* `\f`: form feed
+* `\'`: single quote
+* `\"`: double quote
+* `\\`: backslash
