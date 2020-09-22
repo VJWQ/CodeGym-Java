@@ -12,8 +12,8 @@ static 方法无法处理非 static 方法或非 static 变量！”
 # Object Lifecycle
 Creating any object causes the Java machine to allocate memory for it. Objects have their own lifecycle.
 * Begin an object's life: **when it is created**. The Java virtual machine allocates the memory necessary to create the object.
-  - The object is "alive" **as long as there are references to it**. As soon as there are no references, the object "dies".
-* **Memory leaks**: one of the most unpleasant bugs. 
+  - <font color="red">The object is "alive" **as long as there are references to it**. As soon as there are no references, the object "dies".</font>
+* **Memory leaks**: memory which is no longer needed is not released; one of the most unpleasant bugs. 
 * Java's built-in **garbage collector (GC)**: an internal Java mechanism responsible for freeing up **_memory_** (Not the object itself). 
 GC reaches an object when the special `finalize()` method is called.
     ```java
@@ -36,11 +36,32 @@ GC reaches an object when the special `finalize()` method is called.
   - the garbage collector works in parallel with the program. It is not part of the program but runs separately.
 * The Java machine itself determines whether to call finalize() on a case by case basis. **Don't rely on the finalize() method to release critical resources.**
 
-* **Reachable Object** and **Unreachable Object**: 
-  - **Root Reference**: the one created directly in executable code.
-  - **Reachable Object**: if can trace along to reference chain from an object to the root reference. 
-  - **Unreachable Object**: if the object drops out of this chain; none of the variables in the code currently being executed references it, and it cannot be reached through the reference chain.
-
+* <font color="blue">Java's modern garbage collector doesn't count references. </font>It determines whether an object is <font color="red">**Reachable Object**</font> or <font color="red">**Unreachable Object**</font>.
+  - <font color="green">**Root Reference**</font>: the one directly created in executable code.
+  - <font color="green">**Reachable Object**</font>: can be traced along to reference chain from an object to the root reference. 
+  - <font color="green">**Unreachable Object**</font>: the object drops out of this chain; none of the variables in the code currently being executed references it, and it cannot be reached through the reference chain.
+![](weakreach.gif)
 * All Java objects are stored in a special area of memory called the **heap**. 
 They could be divided into two types: **simple objects** and **long-lived objects**. 
-  - **Long-lived Objects**: objects that have survived many rounds of garbage collection. They usually live until the program ends.
+  - <font color="green">**Long-lived Objects**</font>: objects that have survived many rounds of garbage collection. They usually live until the program ends.
+  
+* **Heap Memory in Java**: the runtime data area from which the Java VM allocates memory for all class instances and arrays. 
+The heap may be of a fixed or variable size. The garbage collector is an automatic memory management system that reclaims heap memory for objects. 
+  - <font color="green">**Young Generation**</font>: where all new objects are allocated and aged. 
+    - **Eden Space**: the pool from which memory when we use the keyword *new*; initially allocated for most objects.
+      
+    - **Survivor Space**: the pool containing objects that have survived the garbage collection of the Eden space.
+
+    - A minor Garbage collection occurs when this fills up. 
+  - <font color="green">**Old/Tenured Generation**</font>: where long surviving objects are stored. They have existed for some time in the survivor space.
+    - When objects are stored in the Young Generation, a threshold for the object's age is set and when that threshold is reached, the object is moved to the old generation
+
+* **Non-heap Memory**: includes a method area shared among all threads and memory required for the internal processing or optimization for the Java VM. 
+It stores per-class structures such as a runtime constant pool, field and method data, and the code for methods and constructors. The method area is logically part of the heap but, depending on the implementation, a Java VM may not garbage collect or compact it. 
+Like the heap memory, the method area may be of a fixed or variable size. The memory for the method area does not need to be contiguous.
+  - <font color="green">**Permanent Generation**</font>: consists of JVM metadata for the runtime classes and application methods. 
+    - The pool containing all the reflective data of the virtual machine itself, 
+  such as class and method objects. 
+    - With Java VMs that use class data sharing, this generation is divided into read-only and read-write areas.
+  - <font color="green">**Code Cache**</font>: containing memory that is used for compilation and storage of native code.
+![](800.webp)
