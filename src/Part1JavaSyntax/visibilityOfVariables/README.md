@@ -39,7 +39,7 @@
   - Constant variables **<font color="red">never change from their initial value</font>**.
 - <font color="green">stored in the static memory</font>. It is rare to use static variables other than declared final and used as either public or private constants.
 - **created** when the program starts and **destroyed** when the program stops.
-- visibility is similar to instance variables. 
+- <font color="blue">visibility is similar to instance variables</font>. 
   - However, most static variables are declared public since they must be available for users of the class.
 - <font color="red">default values are same as instance variables</font>; 
   - For numbers, the default value is `0`;

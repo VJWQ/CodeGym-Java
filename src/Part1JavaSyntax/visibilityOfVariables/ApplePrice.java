@@ -1,6 +1,6 @@
 package Part1JavaSyntax.visibilityOfVariables;
 
-public class Solution {
+public class ApplePrice {
 
     public static void main(String[] args) {
         Apple apple = new Apple();
