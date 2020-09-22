@@ -1,8 +1,7 @@
 # Variable Visibility
-- [Local Variables](#Local Variables)
-- [Instance Variables](#Instance Variables)
-- [Class/Static Variables](#Class/Static Variables)
-
+- [Local Variables](#Local-Variables)
+- [Instance Variables](#Instance-Variables)
+- [Class/Static Variables](#Class/Static-Variables)
 
 ## Local Variables
 - **declared** <font color="red">in</font> methods, constructors, or blocks; 
