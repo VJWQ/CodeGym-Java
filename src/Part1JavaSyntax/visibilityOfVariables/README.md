@@ -1,6 +1,10 @@
 # Variable Visibility
+- [Local Variables](#Local Variables)
+- [Instance Variables](#Instance Variables)
+- [Class/Static Variables](#Class/Static Variables)
 
-## Local variables
+
+## Local Variables
 - **declared** <font color="red">in</font> methods, constructors, or blocks; 
 - **created** when the method, constructor or block is entered; **destroyed** once it exits the method, constructor, or block; 
   - once the program reaches the end of the method (or block), the local variable disappears from memory.
@@ -10,7 +14,7 @@
 - <font color="red">have no default value</font>; 
   - local variables should be declared and an initial value should be assigned before the first use.
 
-## Instance variables
+## Instance Variables
 - **declared** <font color="red">in</font> a class, but <font color="red">outside</font> a method, constructor or any block. Can be declared in class level before or after use.
 - when a space is allocated <font color="red">for an object</font> in the heap: a slot <font color="red">for each instance variable value</font> is created.
 - **created** when an object is created with the use of the keyword `new` and **destroyed** when the object is destroyed.
@@ -28,7 +32,7 @@
   - However, within static methods (when instance variables are given accessibility), they should be called using the fully qualified name. `ObjectReference.VariableName`.
 
 
-## Class/Static variables
+## Class/Static Variables
 - **declared with the static keyword** <font color="red">in</font> a class, but <font color="red">outside</font> a method, constructor or any block. 
 - one copy of each class variable per class, regardless of how many objects are created from it.
 - <font color="red">rarely used other than being declared as constants</font>. 
