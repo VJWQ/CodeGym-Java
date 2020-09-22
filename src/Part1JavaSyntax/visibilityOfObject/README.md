@@ -1,14 +1,3 @@
-# Static
-* 
-“Java 方法分为两个类别。
-实例方法是在对象上调用的，并且可以访问该对象的数据。
-static 方法没有该访问权限，因为它们根本没有对象引用。
-但是，它们可以引用类的 static 变量和其他 static 方法。
-
-static 方法无法处理非 static 方法或非 static 变量！”
-
-
-
 # Object Lifecycle
 Creating any object causes the Java machine to allocate memory for it. Objects have their own lifecycle.
 * Begin an object's life: **when it is created**. The Java virtual machine allocates the memory necessary to create the object.
@@ -48,14 +37,14 @@ They could be divided into two types: **simple objects** and **long-lived object
 * **Heap Memory in Java**: the runtime data area from which the Java VM allocates memory for all class instances and arrays. 
 The heap may be of a fixed or variable size. The garbage collector is an automatic memory management system that reclaims heap memory for objects. 
   - <font color="green">**Young Generation**</font>: where all new objects are allocated and aged. 
-    - **Eden Space**: the pool from which memory when we use the keyword *new*; initially allocated for most objects.
+    - **Eden Space**: the pool from which memory when we use the keyword `new`; initially allocated for most objects.
       
     - **Survivor Space**: the pool containing objects that have survived the garbage collection of the Eden space.
 
     - A minor Garbage collection occurs when this fills up. 
   - <font color="green">**Old/Tenured Generation**</font>: where long surviving objects are stored. They have existed for some time in the survivor space.
     - When objects are stored in the Young Generation, a threshold for the object's age is set and when that threshold is reached, the object is moved to the old generation
-
+![](800.webp)
 * **Non-heap Memory**: includes a method area shared among all threads and memory required for the internal processing or optimization for the Java VM. 
 It stores per-class structures such as a runtime constant pool, field and method data, and the code for methods and constructors. The method area is logically part of the heap but, depending on the implementation, a Java VM may not garbage collect or compact it. 
 Like the heap memory, the method area may be of a fixed or variable size. The memory for the method area does not need to be contiguous.
@@ -64,4 +53,3 @@ Like the heap memory, the method area may be of a fixed or variable size. The me
   such as class and method objects. 
     - With Java VMs that use class data sharing, this generation is divided into read-only and read-write areas.
   - <font color="green">**Code Cache**</font>: containing memory that is used for compilation and storage of native code.
-![](800.webp)
