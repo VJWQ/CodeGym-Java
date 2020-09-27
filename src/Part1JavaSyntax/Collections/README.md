@@ -8,6 +8,10 @@ The Set interface provides an **unordered** collection of **unique objects**, i.
 - LinkedHashSet, TreeSet, and HashSet are frequently used Set implementation. 
 
 ```java
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Iterator;
+
 public static void main(String[] args)
 {
     Set<String> set = new HashSet<String>();
@@ -32,6 +36,10 @@ public static void main(String[] args)
 List in Java provides **ordered** and **indexed** collection which **may contain duplicates**. 
 - ArrayList and LinkedList are two most popular used List implementation.
 ```java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
+
 public static void main(String[] args)
 {
     List<String> list = new ArrayList<String>();
@@ -57,6 +65,10 @@ Map provides a data structure based on key-value pair and hashing.
 - most popular implementation of Map interface is HashMap, LinkedHashMap, Hashtable, and TreeMap.
 
 ```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+
 public static void main(String[] args)
 {
     // all elements are stored in pair
@@ -129,4 +141,42 @@ public class MyClass {
 ```
 In for-each loop, we can’t modify collection; however, it has better understanding comparing with nested for-loop. 
 
+- Reviewing code in **Set** and **Map**:
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public static void main(String[] args)
+{
+    Set<String> set = new HashSet<String>();
+    set.add("one");
+    set.add("two");
+    set.add("three");
+
+    for (String text : set)
+    {
+        System.out.println(text);
+    }
+}
+```
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public static void main(String[] args)
+{
+    Map<String, String> map = new HashMap<String, String>();
+    map.put("first", "one");
+    map.put("second", "two");
+    map.put("third", "three");
+
+    for (Map.Entry<String, String> pair : map.entrySet())
+    {
+        String key = pair.getKey();         // key
+        String value = pair.getValue();     // value
+        System.out.println(key + ":" + value);
+    }
+}
+```
 ![](java-collection-hierarchy.png)
