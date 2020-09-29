@@ -19,8 +19,8 @@ The Set interface provides an **unordered** collection of **unique objects**, i.
 |removeAll(Collection<?> c)|Removes from this set all of its elements that are contained in the specified collection (optional operation).|
 |contains(Object o)|Returns true if this set contains the specified element.|
 |containsAll(Collection<?> c)|Returns true if this set contains all of the elements of the specified collection.|
-
-
+|size()|Returns the number of elements in this set (its cardinality).|
+|clear()|Removes all of the elements from this set (optional operation).|
 
 - Sample code:
 ```java
