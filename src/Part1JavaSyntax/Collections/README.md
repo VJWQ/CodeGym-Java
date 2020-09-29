@@ -1,12 +1,28 @@
 # Collections
 
-Java collections are divided into three main groups: Set, List, Map (or dictionary)
+Java collections are divided into three main groups: [Set](#Set), [List](#List), [Map/Dictionary](#Map).  
+
 
 ## Set
 The Set interface provides an **unordered** collection of **unique objects**, i.e. Set doesn't allow duplicates.
 
-- LinkedHashSet, TreeSet, and HashSet are frequently used Set implementation. 
+- **LinkedHashSet**, **TreeSet**, and **HashSet** are frequently used Set implementation. 
+- Frequent operations:
 
+|  Method   | Description  |
+|  ----  | ----  |
+| 	add(E e)  | Adds the specified element to this set if it is not already present (optional operation).
+  |
+| 	addAll(Collection<? extends E> c)  | Adds all of the elements in the specified collection to this set if they're not already present (optional operation).
+ |
+|remove(Object o)|Removes the specified element from this set if it is present (optional operation).|
+|removeAll(Collection<?> c)|Removes from this set all of its elements that are contained in the specified collection (optional operation).|
+|contains(Object o)|Returns true if this set contains the specified element.|
+|containsAll(Collection<?> c)|Returns true if this set contains all of the elements of the specified collection.|
+
+
+
+- Sample code:
 ```java
 import java.util.HashSet;
 import java.util.Set;
@@ -34,7 +50,7 @@ public static void main(String[] args)
 
 ## List
 List in Java provides **ordered** and **indexed** collection which **may contain duplicates**. 
-- ArrayList and LinkedList are two most popular used List implementation.
+- **ArrayList** and **LinkedList** are two most popular used List implementation.
 ```java
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +78,7 @@ public static void main(String[] args)
 ## Map
 Map provides a data structure based on key-value pair and hashing. 
 - If the key type is Integer: degenerate to List. 
-- most popular implementation of Map interface is HashMap, LinkedHashMap, Hashtable, and TreeMap.
+- most popular implementation of Map interface is **HashMap**, **LinkedHashMap**, **Hashtable**, and **TreeMap**.
 
 ```java
 import java.util.HashMap;
