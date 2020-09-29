@@ -10,17 +10,15 @@ The Set interface provides an **unordered** collection of **unique objects**, i.
 - Frequent operations:
 
 |  Method   | Description  |
-|  ----  | ----  |
-| 	add(E e)  | Adds the specified element to this set if it is not already present (optional operation).
-  |
-| 	addAll(Collection<? extends E> c)  | Adds all of the elements in the specified collection to this set if they're not already present (optional operation).
- |
-|remove(Object o)|Removes the specified element from this set if it is present (optional operation).|
-|removeAll(Collection<?> c)|Removes from this set all of its elements that are contained in the specified collection (optional operation).|
-|contains(Object o)|Returns true if this set contains the specified element.|
-|containsAll(Collection<?> c)|Returns true if this set contains all of the elements of the specified collection.|
-|size()|Returns the number of elements in this set (its cardinality).|
-|clear()|Removes all of the elements from this set (optional operation).|
+|  -------  | -----------  |
+|**add**(E e)|Adds the specified element to this set if it is not already present (optional operation).|
+|**addAll**(Collection<? extends E> c)|Adds all of the elements in the specified collection to this set if they're not already present (optional operation).|
+|**remove**(Object o)|Removes the specified element from this set if it is present (optional operation).|
+|**removeAll**(Collection<?> c)|Removes from this set all of its elements that are contained in the specified collection (optional operation).|
+|**contains**(Object o)|Returns **true** if this set contains the specified element.|
+|**containsAll**(Collection<?> c)|Returns true if this set contains all of the elements of the specified collection.|
+|**size()**|Returns the number of elements in this set (its cardinality).|
+|**clear()**|Removes all of the elements from this set (optional operation).|
 
 - Sample code:
 ```java
