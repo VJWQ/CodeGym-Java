@@ -11,7 +11,7 @@ public class MyClass {
 
         // Narrowing Casting
         double myDouble1 = 9.78;
-        int myInt1 = (int) myDouble; // Manual casting: double to int
+        int myInt1 = (int) myDouble1; // Manual casting: double to int
 
         System.out.println(myDouble1);   // Outputs 9.78
         System.out.println(myInt1);      // Outputs 9
